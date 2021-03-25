@@ -1,0 +1,112 @@
+html {
+  font-size: 16px;
+  font-family: "Merriweather", serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #d3cbb8;
+}
+
+@media screen and (min-width: 25em) {
+  html {
+    font-size: calc(16px + (8) * (100vw - 400px) / (800 - 400));
+  }
+}
+
+.title-container {
+  background: url("geometric\ pattern.jpg");
+  background-repeat: repeat;
+  position: relative;
+}
+
+.title {
+  padding-top: 20%;
+  padding-bottom: 20%;
+  margin: auto;
+  width: 80%;
+  text-align: justify;
+  position: relative;
+  z-index: 20;
+}
+
+.outlined {
+  background: white;
+  padding: 20px;
+  display: inline-block;
+  margin: 20px;
+}
+
+#heads,
+#cubes {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+#heads {
+  z-index: 20;
+}
+
+hr {
+  background: black;
+  border: 0;
+  height: 2px;
+}
+
+.break {
+  height: 2.5rem;
+  margin-top: 1rem;
+  background-color: #494748;
+}
+
+.welcome {
+  font-size: 1.5rem;
+}
+.name {
+  font-family: "Fredoka One", cursive;
+  font-size: 3rem;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h2.project-text {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 12px;
+}
+
+.project-text {
+  padding-left: 30px;
+  padding-top: 60px;
+
+  padding-bottom: 45px;
+}
+
+iframe {
+  width: 100%;
+  height: calc(100vw / 1.77777778);
+  display: block;
+}
+
+@media screen and (min-width: 1920px) {
+  .project-text {
+    padding-left: calc((100vw - 1920px) / 2);
+    padding-right: calc((100vw - 1920px) / 2);
+  }
+
+  iframe {
+    margin-left: calc((100vw - 1920px) / 2);
+    margin-right: calc((100vw - 1920px) / 2);
+    width: 1920px;
+    height: 1080px;
+  }
+}
