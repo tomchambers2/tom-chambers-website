@@ -1,17 +1,18 @@
 const sketch = function (p) {
   let width, height;
-  let headObjects;
+  let headObjects = [];
   const speed = 6;
   const rotationSpeed = 1.2;
   let heads = [];
+  let head;
 
   p.preload = function () {
-    heads[0] = p.loadImage("me1.png");
-    heads[1] = p.loadImage("me1.png");
-    heads[2] = p.loadImage("me2.png");
-    heads[3] = p.loadImage("me2.png");
-    heads[4] = p.loadImage("me3.png");
-    heads[5] = p.loadImage("me3.png");
+    head = p.loadImage("me4.png");
+    // heads[1] = p.loadImage("me4.png");
+    // heads[2] = p.loadImage("me4.png");
+    // heads[3] = p.loadImage("me4.png");
+    // heads[4] = p.loadImage("me4.png");
+    // heads[5] = p.loadImage("me4.png");
   };
 
   p.setup = function () {
@@ -19,13 +20,23 @@ const sketch = function (p) {
     width = parentDiv.offsetWidth;
     height = parentDiv.offsetHeight;
     p.createCanvas(parentDiv.offsetWidth, parentDiv.offsetHeight);
-    headObjects = heads.map((head) => ({
-      head,
-      //   position: p.createVector(width / 2, height / 2),
-      position: p.createVector(width / 2, height / 2),
-      speed: p.createVector(p.random(-speed, speed), p.random(-speed, speed)),
-      rotation: p.random(0, 360),
-    }));
+
+    for (let index = 0; index < 6; index++) {
+      headObjects.push({
+        head,
+        //   position: p.createVector(width / 2, height / 2),
+        position: p.createVector(width / 2, height / 2),
+        speed: p.createVector(p.random(-speed, speed), p.random(-speed, speed)),
+        rotation: p.random(0, 360),
+      });
+    }
+    // headObjects = heads.map(() => ({
+    //   head,
+    //   //   position: p.createVector(width / 2, height / 2),
+    //   position: p.createVector(width / 2, height / 2),
+    //   speed: p.createVector(p.random(-speed, speed), p.random(-speed, speed)),
+    //   rotation: p.random(0, 360),
+    // }));
   };
 
   const moveHead = (position, speed) => {
@@ -76,7 +87,7 @@ const sketch = function (p) {
       rotation: headObject.rotation + rotationSpeed,
     }));
     headObjects.map(({ head, position, rotation }) => {
-      p.ellipse(position.x, position.y, 50);
+      // p.ellipse(position.x, position.y, 50);
       rotate_and_draw_image(
         head,
         position.x - head.width / 2,
