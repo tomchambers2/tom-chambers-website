@@ -7,12 +7,15 @@ const sketch = function (p) {
   let head;
 
   p.preload = function () {
-    head = p.loadImage("me4.png");
-    // heads[1] = p.loadImage("me4.png");
-    // heads[2] = p.loadImage("me4.png");
-    // heads[3] = p.loadImage("me4.png");
-    // heads[4] = p.loadImage("me4.png");
-    // heads[5] = p.loadImage("me4.png");
+    const neutral = p.loadImage("me4.png");
+    const smile = p.loadImage("me5.png");
+    const sad = p.loadImage("me6.png");
+    heads[0] = neutral;
+    heads[1] = smile;
+    heads[2] = sad;
+    heads[3] = neutral;
+    heads[4] = smile;
+    heads[5] = sad;
   };
 
   p.setup = function () {
@@ -21,22 +24,21 @@ const sketch = function (p) {
     height = parentDiv.offsetHeight;
     p.createCanvas(parentDiv.offsetWidth, parentDiv.offsetHeight);
 
-    for (let index = 0; index < 6; index++) {
-      headObjects.push({
-        head,
-        //   position: p.createVector(width / 2, height / 2),
-        position: p.createVector(width / 2, height / 2),
-        speed: p.createVector(p.random(-speed, speed), p.random(-speed, speed)),
-        rotation: p.random(0, 360),
-      });
-    }
-    // headObjects = heads.map(() => ({
-    //   head,
-    //   //   position: p.createVector(width / 2, height / 2),
-    //   position: p.createVector(width / 2, height / 2),
-    //   speed: p.createVector(p.random(-speed, speed), p.random(-speed, speed)),
-    //   rotation: p.random(0, 360),
-    // }));
+    // for (let index = 0; index < 6; index++) {
+    //   headObjects.push({
+    //     head,
+    //     //   position: p.createVector(width / 2, height / 2),
+    //     position: p.createVector(width / 2, height / 2),
+    //     speed: p.createVector(p.random(-speed, speed), p.random(-speed, speed)),
+    //     rotation: p.random(0, 360),
+    //   });
+    // }
+    headObjects = heads.map((head) => ({
+      head,
+      position: p.createVector(width / 2, height / 2),
+      speed: p.createVector(p.random(-speed, speed), p.random(-speed, speed)),
+      rotation: p.random(0, 360),
+    }));
   };
 
   const moveHead = (position, speed) => {
