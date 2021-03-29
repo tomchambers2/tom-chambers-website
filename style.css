@@ -55,8 +55,6 @@ a:visited {
 
 .break {
   height: 2.5rem;
-  /* margin-top: 1rem; */
-  /* background-color: #494748; */
 }
 
 .outlined {
@@ -70,10 +68,9 @@ a:visited {
 
 .welcome {
   font-size: 1.5rem;
-  /* font-family: "Staatliches", sans-serif; */
 }
+
 .name {
-  /* font-family: "Staatliches", sans-serif; */
   font-size: 3rem;
   line-height: 97%;
   padding-top: 24px;
@@ -114,15 +111,25 @@ iframe {
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 1000px) {
+  img,
+  .project-text,
+  iframe {
+    padding: 10px;
+  }
+
+  .title {
+    width: 90%;
+  }
+}
+
 @media screen and (min-width: 1920px) {
-  .project-text {
-    padding-left: calc((100vw - 1920px) / 2);
-    padding-right: calc((100vw - 1920px) / 2);
+  .project-text,
+  img {
+    width: 1920px;
   }
 
   iframe {
-    margin-left: calc((100vw - 1920px) / 2);
-    margin-right: calc((100vw - 1920px) / 2);
     width: 1920px;
     height: 1080px;
   }
