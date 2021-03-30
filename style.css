@@ -94,7 +94,6 @@ h2 {
   padding-left: 70px;
   padding-right: 70px;
   padding-top: 60px;
-
   padding-bottom: 45px;
 }
 
@@ -123,14 +122,21 @@ iframe {
   }
 }
 
+.intro-text {
+  text-align: justify;
+}
+
 @media screen and (min-width: 1920px) {
   .project-text,
   img {
     width: 1920px;
+    margin: auto;
+    display: block;
   }
 
   iframe {
     width: 1920px;
     height: 1080px;
+    margin: auto;
   }
 }
